@@ -1,11 +1,30 @@
+var eventText;
+
+$(".saveBtn").on('click', function(event) {
+
+    eventText = $(".description").val();
+    console.log(eventText);
+    localStorage.setItem(".textarea",eventText);
+
+});
+
+$(window).on('load', function(event) { 
+
+    console.log("You refreeshed!")
+    eventText = localStorage.getItem("textarea");
+    $(".textarea").val(eventText);
+
+});
+
+//Getting current time using moment()
 var currentTime = moment().format("dddd, MMMM Do, YYYY");
 $("#currentDay").text(currentTime);
 
 //Converting current time to hours.
 var currentTimeInHours = moment().hours();
-//console.log(currentTimeInHours);
 
-$(".description").each( function() {
+//Compare current time in hours with id for each block to set the styling
+$(".time-block").each( function() {
 
     var currentBlock = $(this).attr("id");
     // console.log(currentBlock);
@@ -23,6 +42,7 @@ $(".description").each( function() {
     }   
 
 });
+
 
 
 
