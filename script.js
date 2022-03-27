@@ -15,12 +15,12 @@ $(".time-block").each( function() {
     var currentBlock = $(this).attr("id");
 
     //If the current block id = time in hours
-    if(currentBlock == currentTimeInHours-5){
+    if(currentBlock == currentTimeInHours){
 
        $(this).addClass("present");
 
        //If the current block id is less than current time in hours
-    } else if(currentBlock < currentTimeInHours-5) {
+    } else if(currentBlock < currentTimeInHours) {
 
         $(this).addClass("past");
 
